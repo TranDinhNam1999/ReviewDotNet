@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using ServiceAPI.Common.Types;
 using ServiceAPI.v1.Commands;
 using ServiceAPI.v1.Models;
@@ -8,7 +9,7 @@ using ServiceAPI.v1.ResponeModel;
 
 namespace ServiceAPI.v1.Controllers
 {
-
+    [EnableRateLimiting("NamOk")]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
